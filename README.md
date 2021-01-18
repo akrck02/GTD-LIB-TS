@@ -1,2 +1,2 @@
-# code_toolkit
+# CodeToolkit
  Toolkit API for clean coding.
