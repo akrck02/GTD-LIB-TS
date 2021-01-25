@@ -8,8 +8,8 @@ function validate_email(email,func){
     return true;
 } 
 
-function validate_username(username,func){
-    if(username.length > 50) {
+function validate_username(username,maxchar,func){
+    if(username.length > maxchar) {
         func();
         return false;
     }
