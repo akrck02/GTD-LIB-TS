@@ -8,8 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ts" : "tsc",
-    "distjs": "webpack ./temp/javascript/gtd.js"
+    "ts": "tsc",
+    "dist": "webpack ./temp/javascript/gtd.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/akrck02/GTD_LIB#readme",
   "dependencies": {
+    "typescript-compiler": "^1.4.1-2",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0"
   }
