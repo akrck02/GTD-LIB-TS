@@ -1,0 +1,15 @@
+# temporal directories
+/temp/*
+/dist/*
+
+# IDE directories
+/.vscode/
+
+#distribution directories
+/dist/
+
+#temp directories
+/temp/
+
+#node_modules directories
+/node_modules/

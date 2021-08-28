@@ -1,0 +1,29 @@
+{
+  "name": "GTD_LIB",
+  "version": "1.0.0",
+  "description": "Easy code :)",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ts" : "tsc",
+    "distjs": "webpack ./temp/javascript/gtd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akrck02/GTD_LIB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akrck02/GTD_LIB/issues"
+  },
+  "homepage": "https://github.com/akrck02/GTD_LIB#readme",
+  "dependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

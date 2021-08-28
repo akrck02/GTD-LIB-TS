@@ -1,0 +1,11 @@
+{
+    
+    "compilerOptions": {
+      "preserveConstEnums": true,
+      "target" : "es2020",
+      "outDir": "temp/javascript"
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"],
+  
+}
