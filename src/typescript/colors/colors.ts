@@ -1,4 +1,4 @@
-import { toHex } from "../data/GTD_NumericStyles.js";
+import { toHex } from "../data/numeric";
 
 /**
  * Convert rgb values to HEX
@@ -7,7 +7,7 @@ import { toHex } from "../data/GTD_NumericStyles.js";
  * @param {*} b - Blue color
  * @returns HEX value of a color.
  */
-export const rgbToHex = (r, g, b) => {
+export function rgbToHex (r: number, g:number , b:number) : string {
   return "#" + toHex(r) + toHex(g) + toHex(b);
 }
 
@@ -16,7 +16,7 @@ export const rgbToHex = (r, g, b) => {
  * @param {*} hex 
  * @returns RGB value of HEX color
  */
-export const hexToRgb = (hex) => {
+export function hexToRgb (hex) : {r: number, g: number, b: number} {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
       r: parseInt(result[1], 16),
