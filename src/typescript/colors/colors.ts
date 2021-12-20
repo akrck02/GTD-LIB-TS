@@ -1,4 +1,4 @@
-import { toHex } from "../data/numeric";
+import { toHex } from "../data/numeric.js";
 
 /**
  * Convert rgb values to HEX

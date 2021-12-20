@@ -1,15 +1,15 @@
-import * as colors from './colors/colors';
-import * as https from './core/http';
-import * as datetools from './data/datetools';
-import * as easyfetch from './data/easyfetch';
-import * as numeric from './data/numeric';
-import * as urltools from './data/urltools';
-import * as materialcolors from './material/materialcolors';
-import * as materialicons from './material/materialicons';
-import * as timetools from './sync/timetools';
-import * as regexp from './validation/regexp';
-import * as responsivetools from './web/responsivetools';
-import * as uicomponent from './web/uicomponent';
+import * as colors from './colors/colors.js';
+import * as https from './core/http.js';
+import * as datetools from './data/datetools.js';
+import * as easyfetch from './data/easyfetch.js';
+import * as numeric from './data/numeric.js';
+import * as urltools from './data/urltools.js';
+import * as materialcolors from './material/materialcolors.js';
+import * as materialicons from './material/materialicons.js';
+import * as timetools from './sync/timetools.js';
+import * as regexp from './validation/regexp.js';
+import * as responsivetools from './web/responsivetools.js';
+import * as uicomponent from './web/uicomponent.js';
 
 
 const MODULE_DEPENDENCIES = { 
