@@ -17,14 +17,12 @@ Easy code :)
 
 ## How to use
 
-Just import the library file.
+Just import the library files.
 
-- Javascript  >> GTd.js
-- Typescript >> GTd.ts
-- Php >> GTd.php
-
-- Java >> GTd.jar
-
+> - Javascript  >> GTd-v1.0-js.zip
+> - Typescript  >> GTd-v1.0-ts.zip
+> - Php         >> GTd-v1.0-php.zip
+> - Java        >> GTd-v1.0-java.jar
 
 
 ## Modular, Simple.
