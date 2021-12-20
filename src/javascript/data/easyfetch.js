@@ -1,21 +1,15 @@
 import { HTTPS_METHOD } from "../core/http";
-
 /**
  * A class that represents a response from a fetch request.
  * @description Encapsulates the data and methods for easy fetching
  * @author Akrck02
  */
 export class Response {
-    private response: Promise<globalThis.Response>;
-    private successFn: Function;
-    private errorFn: Function;
-
-    constructor(response: Promise<globalThis.Response>) {
+    constructor(response) {
         this.response = response;
         this.successFn = (data) => console.log(data);
         this.errorFn = (err) => console.log("Error in response : ", err);
     }
-
     /**
      *  Executes tne callback function with the response json as an argument.
      * @returns the response itself
@@ -27,13 +21,12 @@ export class Response {
      *      .json();
      *
      */
-    public json(): Response {
+    json() {
         this.response
             .then((res) => res.json().then((json) => this.successFn(json)))
             .catch((err) => this.errorFn(err));
         return this;
     }
-
     /**
      * Executes the callback function with the response text as an argument.
      * @returns the response itself
@@ -45,13 +38,12 @@ export class Response {
      *      .text();
      *
      */
-    public text(): Response {
+    text() {
         this.response
             .then((res) => res.text().then((text) => this.successFn(text)))
             .catch((err) => this.errorFn(err));
         return this;
     }
-
     /**
      * Executes the callback function with the response blob as an argument.
      * @returns the response itself
@@ -62,47 +54,30 @@ export class Response {
      *     .error(err => console.log(err))
      *     .blob();
      */
-    public blob() {
+    blob() {
         this.response
             .then((res) => res.blob().then((blob) => this.successFn(blob)))
             .catch((err) => this.errorFn(err));
     }
-
     /**
      * Sets the callback function to be executed when the response is successful.
      * @param success the callback function
      * @returns the response itself
      */
-    public success(success: Function): Response {
+    success(success) {
         this.successFn = success;
         return this;
     }
-
     /**
      * Sets the callback function to be executed when the response is unsuccessful.
      * @param error the callback function
      * @returns the response itself
      */
-    public error(error: Function): Response {
+    error(error) {
         this.errorFn = error;
         return this;
     }
 }
-
-/**
- * Properties for fetching data from server.
- * @interface FetchProperties
- * @property {string} url - Url of the server.
- * @property {HTTPS_METHOD} method - Method of the request.
- * @property {string} body - Body of the request.
- *
- */
-export interface EasyFetchProperties {
-    method: HTTPS_METHOD;
-    parameters: object;
-    url: string;
-}
-
 /**
  * @param properties fetch properties
  * @returns a Response object encapsulating the response.
@@ -120,16 +95,14 @@ export interface EasyFetchProperties {
  *     );
  *     response.json();
  */
-export function efetch(properties: EasyFetchProperties): Response {
+export function efetch(properties) {
     let options = {
         method: properties.method,
         headers: { "Content-type": "application/json; charset=UTF-8" },
     };
-
     if (properties.method === HTTPS_METHOD.POST) {
         options["body"] = JSON.stringify(properties.parameters);
     }
-
     const promise = fetch(properties.url, options);
     let response = new Response(promise);
     return response;

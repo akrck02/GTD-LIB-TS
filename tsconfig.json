@@ -1,11 +1,15 @@
+
 {
-    
-    "compilerOptions": {
-      "preserveConstEnums": true,
-      "target" : "es2020",
-      "outDir": "temp/javascript"
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"],
-  
+  "compilerOptions": {
+      "target": "es2016",
+      "module": "es2015",
+      "strictFunctionTypes": true,
+      "moduleResolution": "node",
+      "outDir": "src/javascript/"          
+  },
+  "include": ["src/typescript/**/*"],
+  "exclude": [
+      "node_modules",
+      "**/node_modules/*"
+  ]
 }

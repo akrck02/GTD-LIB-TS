@@ -1,5 +1,3 @@
-
-
 /**
  * Get if a given email is valid
  * @param email email to check
@@ -9,14 +7,13 @@
  *      const isValid = isValidEmail('mymail_$%@me');
  *      console.log(isValid);  // false
  */
-export function isValidEmail(email : string) : boolean {
+export function isValidEmail(email) {
     let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if(!regex.test(email)){
+    if (!regex.test(email)) {
         return false;
-    } 
+    }
     return true;
-} 
-
+}
 /**
  * Get if a given string is a valid url
  * @param url url to check
@@ -26,10 +23,10 @@ export function isValidEmail(email : string) : boolean {
  *      const isValid = isValidUrl('http://www.google.com');
  *      console.log(isValid); // true
  */
-export function isValidUrl(url : string) : boolean {
+export function isValidUrl(url) {
     let regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
-    if(!regex.test(url)){
+    if (!regex.test(url)) {
         return false;
-    } 
+    }
     return true;
 }

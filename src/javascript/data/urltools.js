@@ -10,16 +10,15 @@
  *     const parameters = getParametersByBreakPoint(url, breakpoint);
  *     console.log(parameters); // ["user","1","page","2"]
  */
-export function getParametersByBreakPoint (url: string, breakpoint: string) : string[] {
+export function getParametersByBreakPoint(url, breakpoint) {
     let params = url.split("/");
     const index = params.indexOf(breakpoint);
-
-    if (index == -1) return [];
-
+    if (index == -1)
+        return [];
     params = params.slice(index, params.length);
     return params;
-};
-
+}
+;
 /**
  * Get parameters of a url by index
  * @param url url to get parameters from
@@ -32,12 +31,12 @@ export function getParametersByBreakPoint (url: string, breakpoint: string) : st
  *      const parameters = getParametersByIndex(url, index);
  *      console.log(parameters); // ["1","page","2"]
  */
-export function getParametersByIndex (url: string, index: number) : string[]{
+export function getParametersByIndex(url, index) {
     let params = url.split("/");
     params = params.slice(index, params.length);
     return params;
-};
-
+}
+;
 /**
  * Download a file from a url on the client
  * @param url url of the file
@@ -48,7 +47,7 @@ export function getParametersByIndex (url: string, index: number) : string[]{
  *     const filename = "cat.jpg";
  *     downloadFile(url, filename);
  */
-export function downloadFile(uri: string, name: string) :void {
+export function downloadFile(uri, name) {
     let link = document.createElement("a");
     link.download = name;
     link.href = uri;
@@ -56,7 +55,6 @@ export function downloadFile(uri: string, name: string) :void {
     link.click();
     document.body.removeChild(link);
 }
-
 /**
  * Get url GET parameters
  * @param url url to get parameters from
@@ -67,10 +65,10 @@ export function downloadFile(uri: string, name: string) :void {
  *    const parameters = getUrlGetParameters(url);
  *    console.log(parameters); // {search: "", user: "akrck02", page: "2"}
  */
-export function getUrlGetParameters(url: string) : object {
+export function getUrlGetParameters(url) {
     let params = url.split("?");
-    if (params.length < 2) return {};
-
+    if (params.length < 2)
+        return {};
     params = params[1].split("&");
     let result = {};
     params.forEach((param) => {

@@ -6,10 +6,9 @@
  *     const isSmallDevice = isSmallDevice();
  *     console.log(isSmallDevice); // true
  */
-export function isSmallDevice(): boolean {
+export function isSmallDevice() {
     return window.matchMedia("only screen and (max-width: 760px)").matches;
 }
-
 /**
  * Get if is medium device (between 768px and 1024px)
  * @description This method is useful for checking if the device is a medium device.
@@ -18,12 +17,9 @@ export function isSmallDevice(): boolean {
  *    const isMediumDevice = isMediumDevice();
  *    console.log(isMediumDevice); // true
  */
-export function isMediumDevice(): boolean {
-    return window.matchMedia(
-        "only screen and (min-width: 760px) and (max-width: 1024px)"
-    ).matches;
+export function isMediumDevice() {
+    return window.matchMedia("only screen and (min-width: 760px) and (max-width: 1024px)").matches;
 }
-
 /**
  * Get if is large device (more than 1024px)
  * @description This method is useful for checking if the device is a large device.
@@ -32,10 +28,9 @@ export function isMediumDevice(): boolean {
  *      const isLargeDevice = isLargeDevice();
  *      console.log(isLargeDevice); // true
  */
-export function isLargeDevice(): boolean {
+export function isLargeDevice() {
     return window.matchMedia("only screen and (min-width: 1025px)").matches;
 }
-
 /**
  * Get if user prefers dark mode
  * @description This method is useful for checking if the user prefers dark mode.
@@ -44,22 +39,20 @@ export function isLargeDevice(): boolean {
  *     const prefersDarkMode = prefersDarkMode();
  *     console.log(prefersDarkMode); // true
  */
-export function prefersDarkMode(): boolean {
+export function prefersDarkMode() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
-
 /**
  * Get if user prefers light mode
  * @description This method is useful for checking if the user prefers light mode.
  * @returns true if the user prefers light mode, false otherwise
  * @example
  *    const prefersLightMode = prefersLightMode();
- *    console.log(prefersLightMode); // true 
+ *    console.log(prefersLightMode); // true
  */
-export function prefersLightMode(): boolean {
+export function prefersLightMode() {
     return window.matchMedia("(prefers-color-scheme: light)").matches;
 }
-
 /**
  * Get if user prefers reduced-motion mode
  * @description This method is useful for checking if the user prefers reduced-motion mode.
@@ -68,10 +61,9 @@ export function prefersLightMode(): boolean {
  *      const prefersReducedMotion = prefersReducedMotion();
  *      console.log(prefersReducedMotion); // true
  */
-export function prefersReducedMotion(): boolean {
+export function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
-
 /**
  * Get if is mobile device
  * @description This method is useful for checking if the device is a mobile device.
@@ -81,11 +73,9 @@ export function prefersReducedMotion(): boolean {
  *     console.log(isMobileDevice); // true
  */
 export function isMobile() {
-    return (
-        navigator.userAgent.match(/Android/i) ||
+    return (navigator.userAgent.match(/Android/i) ||
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/iPhone|iPad|iPod/i) ||
         navigator.userAgent.match(/Opera Mini/i) ||
-        navigator.userAgent.match(/IEMobile/i)
-    );
+        navigator.userAgent.match(/IEMobile/i));
 }

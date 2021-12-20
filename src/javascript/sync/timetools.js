@@ -9,10 +9,10 @@
  *      promise.then(() => console.log('slept for ' + time + 'ms'));
  *     // prints 'slept for 1000ms' after 1 second
  */
-export function sleep (ms : number) : Promise<void> {
+export function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
+}
+;
 /**
  * Resolve after the given time
  * @param func function to execute
@@ -24,6 +24,7 @@ export function sleep (ms : number) : Promise<void> {
  *     resolveAfter(() => console.log('resolved after ' + time + 'ms'), time);
  *     // prints 'resolved after 1000ms' after 1 second
  */
-export function resolveAfter (func, time : number) : void {
+export function resolveAfter(func, time) {
     sleep(time).then(func);
-};
+}
+;

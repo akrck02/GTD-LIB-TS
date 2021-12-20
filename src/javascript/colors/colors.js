@@ -1,5 +1,4 @@
 import { toHex } from "../data/numeric";
-
 /**
  * Convert rgb values to HEX
  * @param r Red color
@@ -10,10 +9,9 @@ import { toHex } from "../data/numeric";
  *     const hex = rgbToHex(255, 0, 0);
  *     console.log(hex); // ff0000
  */
-export function rgbToHex(r: number, g: number, b: number): string {
+export function rgbToHex(r, g, b) {
     return "#" + toHex(r) + toHex(g) + toHex(b);
 }
-
 /**
  * Convert HEX colors to RGB
  * @param hex HEX color
@@ -22,13 +20,13 @@ export function rgbToHex(r: number, g: number, b: number): string {
  *    const rgb = hexToRgb("#ff0000");
  *    console.log(rgb); // [255, 0, 0]
  */
-export function hexToRgb(hex): { r: number; g: number; b: number } {
+export function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
         ? {
-              r: parseInt(result[1], 16),
-              g: parseInt(result[2], 16),
-              b: parseInt(result[3], 16),
-          }
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16),
+        }
         : null;
 }
