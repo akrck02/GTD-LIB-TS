@@ -1,8 +1,7 @@
 # GTD API - Getting things done.
 Easy code :)
 
-> This is a multi-language API with code snipets that let you develop software faster. 
->
+> This is a typescript library with code snipets that let you develop software faster. 
 > *Getting things done is our philosophy. Allowing developers to keep code clean and mantainable.*
 
 
@@ -11,18 +10,12 @@ Easy code :)
 
 - Typescript - This is the main language we develop in.
 - Javascript - compile the typescript to get this.
-- Php - In development.
-- Java - In development.
-  
+ 
 
 ## How to use
 
 Just import the library files.
-
-> - Javascript  >> GTd-v1.0-js.zip
-> - Typescript  >> GTd-v1.0-ts.zip
-> - Php         >> GTd-v1.0-php.zip
-> - Java        >> GTd-v1.0-java.jar
+> Typescript  >> GTd-v1.0-ts.zip
 
 
 ## Modular, Simple.
