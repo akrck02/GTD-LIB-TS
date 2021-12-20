@@ -6,64 +6,58 @@ export function randomMaterialColor() {
     const color = randomMaterialColorFromCategory(key);
     return color;
 }
-
 /**
  * Get a random color from category
  * @param {String} category
  * @returns
  */
-function randomMaterialColorFromCategory (category : string)  {
+function randomMaterialColorFromCategory(category) {
     return randomFrom(colors[category]);
-};
-
+}
+;
 /**
  * Get a random color material category
  */
-function randomMaterialColorCategory () {
+function randomMaterialColorCategory() {
     const values = Object.keys(colors);
     return randomFrom(values);
-};
-
+}
+;
 /**
  * Get array of random material colors
  * with a buffer
  * @param {number} bufferSize
  * @param {number} colorNumber- List lenght
  */
-export function randomMaterialColorWithBuffer (bufferSize : number, colorNumber :number) {
+export function randomMaterialColorWithBuffer(bufferSize, colorNumber) {
     let materials = [];
-
-    let buffer : string[] = [];
+    let buffer = [];
     bufferSize = +bufferSize;
     colorNumber = +colorNumber;
-
-    if (bufferSize >= Object.keys(colors).length - 1) bufferSize = 1;
-
+    if (bufferSize >= Object.keys(colors).length - 1)
+        bufferSize = 1;
     for (let i = 0; i < colorNumber; i++) {
         let key = randomMaterialColorCategory();
-
         while (buffer.includes(key)) {
             key = randomMaterialColorCategory();
         }
-
         buffer.push(key);
-
-        if (buffer.length > bufferSize) buffer = buffer.slice(1, buffer.length);
-
+        if (buffer.length > bufferSize)
+            buffer = buffer.slice(1, buffer.length);
         materials.push(randomMaterialColorFromCategory(key));
     }
     return materials;
-};
-
+}
+;
 /**
  * Random element from list
  * @param {*} list - The list
  * @returns random element
  */
-function randomFrom (list : string[]) {
+function randomFrom(list) {
     return list[Math.floor(Math.random() * list.length)];
-};
-
+}
+;
 const colors = {
     red: [
         "#ffebee",
