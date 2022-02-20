@@ -86,7 +86,7 @@ Install nodejs and npm from here
 Then install dependencies **YOU MUST HAVE NODE & NPM INSTALLED**
 
 ```bash
-cd ./GTD_LIB | npm install
+cd ./GTD_LIB && npm install
 ```
 
 
@@ -94,7 +94,7 @@ cd ./GTD_LIB | npm install
 Then use the typescript compiler
 
 ```bash
-npm run ts
+npm run compile
 ```
 
 

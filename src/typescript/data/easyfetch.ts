@@ -12,8 +12,8 @@ export class Response {
 
     constructor(response: Promise<globalThis.Response>) {
         this.response = response;
-        this.successFn = (data) => console.log(data);
-        this.errorFn = (err) => console.log("Error in response : ", err);
+        this.successFn = (data : string) => console.log(data);
+        this.errorFn = (err : Error) => console.log("Error in response : ", err);
     }
 
     /**
@@ -124,13 +124,14 @@ export function efetch(properties: EasyFetchProperties): Response {
     let options = {
         method: properties.method,
         headers: { "Content-type": "application/json; charset=UTF-8" },
+        body : ""
     };
 
     if (properties.method === HTTPS_METHOD.POST) {
-        options["body"] = JSON.stringify(properties.parameters);
+        options.body = JSON.stringify(properties.parameters);
     }
 
     const promise = fetch(properties.url, options);
-    let response = new Response(promise);
+    const response = new Response(promise);
     return response;
 }

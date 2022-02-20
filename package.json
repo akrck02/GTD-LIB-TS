@@ -1,5 +1,5 @@
 {
-  "name": "GTD_LIB",
+  "name": "GTD-LIB-TS",
   "version": "1.0.0",
   "description": "Easy code :)",
   "main": "",
@@ -7,24 +7,26 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "ts": "tsc",
-    "dist": "webpack ./temp/javascript/gtd.js"
+    "test": "mocha -r ts-node/register test/**/*.spec.ts",
+    "compile": "tsc -p src/tsconfig.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akrck02/GTD_LIB.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "akrck02",
+  "license": "GPL3.0-or-later",
   "bugs": {
     "url": "https://github.com/akrck02/GTD_LIB/issues"
   },
   "homepage": "https://github.com/akrck02/GTD_LIB#readme",
-  "dependencies": {
-    "typescript-compiler": "^1.4.1-2",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0"
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "chai": "^4.3.6",
+    "esm": "^3.2.25",
+    "mocha": "^9.2.1",
+    "ts-node": "^10.5.0"
   }
 }

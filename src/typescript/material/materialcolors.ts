@@ -1,7 +1,8 @@
 /**
  * Get a random material color
+ * @returns The random color
  */
-export function randomMaterialColor() {
+export function randomMaterialColor() : string {
     const key = randomMaterialColorCategory();
     const color = randomMaterialColorFromCategory(key);
     return color;
@@ -9,17 +10,17 @@ export function randomMaterialColor() {
 
 /**
  * Get a random color from category
- * @param {String} category
+ * @param category
  * @returns
  */
-function randomMaterialColorFromCategory (category : string)  {
+function randomMaterialColorFromCategory (category : string) : string {
     return randomFrom(colors[category]);
 };
 
 /**
  * Get a random color material category
  */
-function randomMaterialColorCategory () {
+function randomMaterialColorCategory () : string {
     const values = Object.keys(colors);
     return randomFrom(values);
 };
@@ -27,10 +28,10 @@ function randomMaterialColorCategory () {
 /**
  * Get array of random material colors
  * with a buffer
- * @param {number} bufferSize
- * @param {number} colorNumber- List lenght
+ * @param bufferSize
+ * @param colorNumber List lenght
  */
-export function randomMaterialColorWithBuffer (bufferSize : number, colorNumber :number) {
+export function randomMaterialColorWithBuffer (bufferSize : number, colorNumber :number) : string{
     let materials = [];
 
     let buffer : string[] = [];
@@ -52,7 +53,7 @@ export function randomMaterialColorWithBuffer (bufferSize : number, colorNumber 
 
         materials.push(randomMaterialColorFromCategory(key));
     }
-    return materials;
+    return materials[0];
 };
 
 /**
@@ -60,11 +61,11 @@ export function randomMaterialColorWithBuffer (bufferSize : number, colorNumber 
  * @param {*} list - The list
  * @returns random element
  */
-function randomFrom (list : string[]) {
+function randomFrom (list : string[]) : string{
     return list[Math.floor(Math.random() * list.length)];
 };
 
-const colors = {
+const colors : {[key : string] : string[] } = {
     red: [
         "#ffebee",
         "#ffcdd2",

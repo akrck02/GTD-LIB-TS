@@ -1,3 +1,5 @@
+import { toKebabCase } from "../data/stringtools";
+
 /**
  * The properties of the UI Component.
  * @interface UIProperties  
@@ -11,6 +13,7 @@ export interface UIProperties {
     styles?: { [key: string]: string };
     data?: { [key: string]: string };
     events?: { [key: string]: (event: Event) => void };
+    aria? : { [key: string]: string };
 }
 
 /**
@@ -20,15 +23,15 @@ export interface UIProperties {
  */
 export class UIComponent {
     element: HTMLElement;
-
     type?: string;
     text?: string;
-    id: string;
-    classes: string[];
-    attributes: { [key: string]: string };
-    styles: { [key: string]: string };
-    data: { [key: string]: string };
-    events: { [key: string]: (event: Event) => void } | {};
+    id?: string;
+    classes?: string[];
+    attributes?: { [key: string]: string };
+    styles?: { [key: string]: string };
+    data?: { [key: string]: string };
+    events?: { [key: string]: (event: Event) => void } | {};
+    aria? : { [key: string]: string };
 
     constructor(props: UIProperties) {
         this.type = props.type ?? "div";
@@ -80,6 +83,10 @@ export class UIComponent {
             setEvents(element, this.events);
         }
 
+        if(this.aria){
+            setAria(element, this.aria);
+        }
+
         return element;
     }
 
@@ -126,26 +133,6 @@ export class UIComponent {
         return this;
     }
 
-    /**
-     * Shows the component.
-     * @returns The component itself (for chaining)
-     */   
-    public show(): UIComponent {
-        this.element.style.display = "block";
-        return this;
-    }
-
-    /**
-     * Hides the component.
-     * @description If the component is already hidden, nothing happens.
-     * If the component is not hidden, the display style is set to none.
-     * @returns The component itself (for chaining)
-     */
-    public hide(): UIComponent {
-        this.element.style.display = "none";
-        return this;
-    }
-
 }
 
 /**
@@ -166,10 +153,11 @@ export function setAttributes(
     element: HTMLElement,
     options: { [key: string]: string }
 ): HTMLElement {
-    if (options)
-        for (const key in options) 
+    if (options) {
+        for (const key in options) {
             element.setAttribute(key, options[key]);
-
+        }
+    }
     return element;
 }
 
@@ -213,7 +201,8 @@ export function setEvents(
     events: { [key: string]: any }
 ): HTMLElement {
     if (events)
-        for (const key in events) element.addEventListener(key, events[key]);
+        for (const key in events)
+            element.addEventListener(key, events[key]);
 
     return element;
 }
@@ -238,7 +227,10 @@ export function setStyles(
     element: HTMLElement,
     styles: { [key: string]: string }
 ): HTMLElement {
-    if (styles) for (const key in styles) element.style[key] = styles[key];
+    if (styles)
+        for (const key in styles) 
+            element.style.setProperty(toKebabCase(key), styles[key]);
+
 
     return element;
 }
@@ -263,6 +255,23 @@ export function setClasses(
 }
 
 /**
+ * Set aria attributes to a DOM element
+ * @param element DOM element to set aria attributes
+ * @param aria Object with aria attributes and values
+ * @returns DOM element itself in order to chain methods
+ */
+export function setAria(
+    element: HTMLElement,
+    aria: { [key: string]: string }
+): HTMLElement {
+    if (aria) 
+        for (const key in aria) 
+            element.setAttribute("aria-" + key, aria[key]);
+
+    return element;
+}
+
+/**
  * Remove the node matching the selector
  * @param selector a query selector to match the node to remove
  * @returns a promise representing if the node was removed
@@ -272,12 +281,12 @@ export function setClasses(
  *          console.log("Node removed");         
  *      }).catch(() => { console.log("Node not found"); });
  */
-export async function remove(selector): Promise<void> {
+export async function remove(selector : string): Promise<void> {
     const comp = document.querySelector(selector);
     if (comp == null)
         return new Promise((resolve, reject) => reject("No element found"));
 
-    comp.parentNode.removeChild(comp);
+    comp.parentNode?.removeChild(comp);
     return new Promise((resolve) => resolve());
 }
 
@@ -296,7 +305,7 @@ export async function removeAll(selector: string): Promise<number> {
 
     let count = 0;
     comps.forEach((comp) => {
-        comp.parentNode.removeChild(comp);
+        comp.parentNode?.removeChild(comp);
         count++;
     });
 
@@ -312,7 +321,7 @@ export async function removeAll(selector: string): Promise<number> {
  *     forEach("div", (el) => console.log(el.id));
  *     // "div1", "div2", "div3"  
  */
-export function forAll(selector, funct): Promise<void> {
+export function forAll(selector : string , funct : Function): Promise<void> {
     const comps = document.querySelectorAll(selector);
     if (comps == null) 
         return new Promise((resolve, reject) => reject("No element found"));
