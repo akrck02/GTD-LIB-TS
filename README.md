@@ -72,7 +72,7 @@ const MODULE_DEPENDENCIES = {
 Run the following command. This will clone the current project state.
 
 ```bash
-git clone https://github.com/akrck02/GTD_LIB/ --branch latest
+git clone https://github.com/akrck02/GTD-LIB-TS/ --branch latest
 ```
 
 
@@ -86,7 +86,7 @@ Install nodejs and npm from here
 Then install dependencies **YOU MUST HAVE NODE & NPM INSTALLED**
 
 ```bash
-cd ./GTD_LIB && npm install
+cd ./GTD-LIB-TS && npm install
 ```
 
 
@@ -99,11 +99,7 @@ npm run compile
 
 
 
-¡You have the typescript code compiled! Let's bundle it running: 
-
-```bash
-npm run dist
-```
+¡You have the typescript code compiled! 
 
 
 
