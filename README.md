@@ -18,6 +18,7 @@ Just import the library files.
 > Typescript  >> GTD-v1.0.zip
 
 
+
 ## Modular, Simple.
 
 Keep it simple. We serve you the global versions of GTD with all modules inside.
