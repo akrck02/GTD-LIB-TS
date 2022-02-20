@@ -22,7 +22,7 @@ export function rgbToHex(r: number, g: number, b: number): string {
  *    const rgb = hexToRgb("#ff0000");
  *    console.log(rgb); // [255, 0, 0]
  */
-export function hexToRgb(hex): { r: number; g: number; b: number } {
+export function hexToRgb( hex : string ): { r: number; g: number; b: number } {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result
         ? {
@@ -30,5 +30,5 @@ export function hexToRgb(hex): { r: number; g: number; b: number } {
               g: parseInt(result[2], 16),
               b: parseInt(result[3], 16),
           }
-        : null;
+        : {r: 0, g : 0, b: 0};
 }

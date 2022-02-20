@@ -72,7 +72,8 @@ export function getUrlGetParameters(url: string) : object {
     if (params.length < 2) return {};
 
     params = params[1].split("&");
-    let result = {};
+    let result : { [key:string] : string} = {};
+
     params.forEach((param) => {
         let paramArray = param.split("=");
         result[paramArray[0]] = paramArray[1];

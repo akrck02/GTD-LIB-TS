@@ -20,7 +20,7 @@ export interface MaterialIconsProperties {
  */
 export function createSVG(properties: MaterialIconsProperties): string {
     const svg = `
-    <svg class="${properties.classes.join(" ")}" width="${
+    <svg class="${properties.classes?.join(" ")}" width="${
         properties.size
     }" height="${properties.size}" viewBox="0 0 24 24" fill="${
         properties.fill

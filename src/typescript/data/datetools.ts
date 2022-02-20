@@ -38,7 +38,7 @@ export const SECONDS_PER_WEEK = SECONDS_PER_DAY * 7;
  *      console.log(diff); // 1
  * @returns number of months between the two dates
  */
-export function monthDiff(d1, d2) {
+export function monthDiff(d1: Date, d2 : Date) : number{
     if (d2 > d1) {
         return -monthDiff(d2, d1);
     }
@@ -55,7 +55,7 @@ export function monthDiff(d1, d2) {
  *     const isLeapYear = isLeapYear(2018);
  *     console.log(isLeapYear); // false 
  */
- export function isLeapYear (year) : boolean {
+ export function isLeapYear (year : number) : boolean {
     return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
 }
 
@@ -69,7 +69,7 @@ export function monthDiff(d1, d2) {
  * 
  * @returns true if the date is inside today's range, false otherwise 
  */
-export function isToday(date) : boolean {
+export function isToday(date : Date) : boolean {
     const today = new Date();
     return date.getDate() === today.getDate() &&
         date.getMonth() === today.getMonth() &&
@@ -88,7 +88,7 @@ export function isToday(date) : boolean {
  
  * @returns human readable string
  */
-export function humanize(seconds) : string {
+export function humanize(seconds : number) : string {
     if (seconds < SECONDS_PER_MINUTE) {
         if(seconds === 1) 
             return `${seconds} ${SECOND_STRING}`;
