@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "target": "es2016",
+      "module": "es2015",
+      "strictFunctionTypes": true,
+      "moduleResolution": "node",
+      "outDir": "src/javascript/",      
+      "strict": true    
+  },
+  "include": ["src/typescript/**/*"],
+  "exclude": [
+      "../node_modules",
+      "../node_modules/*"
+  ]
+}

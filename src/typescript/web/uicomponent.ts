@@ -1,4 +1,4 @@
-import { toKebabCase } from "../data/stringtools";
+import { toKebabCase } from "../data/stringtools.js";
 
 /**
  * The properties of the UI Component.

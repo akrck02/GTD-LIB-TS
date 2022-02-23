@@ -29,7 +29,7 @@ export class Response {
      */
     public json(): Response {
         this.response
-            .then((res) => res.json().then((json) => this.successFn(json)))
+            .then((res) => res.json().then((json : Object) => this.successFn(json)))
             .catch((err) => this.errorFn(err));
         return this;
     }
@@ -47,7 +47,7 @@ export class Response {
      */
     public text(): Response {
         this.response
-            .then((res) => res.text().then((text) => this.successFn(text)))
+            .then((res) => res.text().then((text : string) => this.successFn(text)))
             .catch((err) => this.errorFn(err));
         return this;
     }
@@ -64,7 +64,7 @@ export class Response {
      */
     public blob() {
         this.response
-            .then((res) => res.blob().then((blob) => this.successFn(blob)))
+            .then((res) => res.blob().then((blob : Blob) => this.successFn(blob)))
             .catch((err) => this.errorFn(err));
     }
 

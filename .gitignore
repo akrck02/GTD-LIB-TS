@@ -2,8 +2,9 @@
 /.vscode/
 
 #distribution directories
-/dist/
-/html/
+/build/res
+/build/src
+/build/test
 
 #temp directories
 /temp/

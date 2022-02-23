@@ -7,8 +7,15 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.spec.ts",
-    "compile": "tsc -p src/tsconfig.json"
+    "test": "rm -rf build/res/* && npm run compile-test && npm run get-test-results && npm run check-test-results",
+
+    "compile": "tsc -p tsconfig.json",
+    "compile-watch": "tsc -p tsconfig.json --watch",
+    "compile-test": "tsc -p test/test.tsconfig.json",
+    "compile-test-watch": "tsc -p test/test.tsconfig.json --watch",
+    
+    "get-test-results": "node build/selenium.get.test.js",
+    "check-test-results": "node build/test.check.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +31,11 @@
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.1.0",
-    "chai": "^4.3.6",
-    "esm": "^3.2.25",
-    "mocha": "^9.2.1",
     "ts-node": "^10.5.0"
+  },
+  "dependencies": {
+    "firefox-profile": "^4.2.2",
+    "live-server": "^1.1.0",
+    "selenium-webdriver": "^4.1.1"
   }
 }
