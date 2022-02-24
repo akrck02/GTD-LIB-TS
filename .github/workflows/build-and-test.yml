@@ -17,5 +17,5 @@ jobs:
         path: "GTD-LIB-TS"
     - name: RunTest
       run: | 
-        ls -lha
+        ls -lha GTD-LIB-TS
 
