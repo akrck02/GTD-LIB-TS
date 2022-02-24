@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+</head>
+<body>
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script class="mocha-init">
+        console.log = (... arguments) => {
+            console.info(arguments.slice(1).join(""));
+        }
+        mocha.setup('bdd')
+        mocha.checkLeaks()
+    </script>
+    <div id="mocha"></div>
+    <script type="module" src="./test/test.bundle.spec.js"></script>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>

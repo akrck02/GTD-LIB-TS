@@ -1,0 +1,20 @@
+
+{
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "es2015",
+        "strictFunctionTypes": true,
+        "moduleResolution": "node",
+        "outDir": "../build/",      
+        "strict": true    
+    },
+    "files": [
+        "test.bundle.spec.ts"
+    ],
+    "exclude": [
+        "..src/",
+        "..src/*",
+        "../node_modules",
+        "../node_modules/*"
+    ]
+  }

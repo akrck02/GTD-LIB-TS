@@ -12,7 +12,7 @@ import * as responsivetools from './web/responsivetools.js';
 import * as uicomponent from './web/uicomponent.js';
 
 
-const MODULE_DEPENDENCIES = { 
+export const MODULE_DEPENDENCIES = { 
     colors : colors,
     https : https,
     datetools : datetools,
