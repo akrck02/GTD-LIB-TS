@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run CLI test for front-end
       run: | 
-        ls -lha 
+        npm run test-ci
 
