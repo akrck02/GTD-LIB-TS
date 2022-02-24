@@ -13,7 +13,7 @@ describe('COLOR TOOLS', function () {
         const rgb = [255, 255, 255];
         const hex = "#ffffff";
 
-        console.log(">", "Testing: rgbToHex(rgb)");
+        console.log(">", "Testing: rgbToHex(" + rgb + ")");
         assert.equal(
             colors.rgbToHex( rgb[0], rgb[1], rgb[2] ),
             hex,
@@ -32,7 +32,7 @@ describe('COLOR TOOLS', function () {
         const rgb = [0, 0, 0];
         const hex = "#000000";
 
-        console.log(">", "Testing: hexToRgb(hex)");
+        console.log(">", "Testing: hexToRgb(" + hex + ")");
         const result = colors.hexToRgb( hex );
         
         assert.equal( result.r, rgb[0], "The r suposed to be " + rgb[0] + ", but it is not" );

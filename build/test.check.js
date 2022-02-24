@@ -15,7 +15,9 @@ console.log("\n------------------ FINAL RESULTS --------------------");
 let failedTitle;
 for (const title in object) {
     const element = object[title];
-    console.log(element.passed ? "✅" : "❌",title, element.duration +"ms");
+    console.log();
+    console.log(element.passed ? "✅" : "❌",title)
+    console.log("🕒", element.duration +"ms");
 
     if (failedTitle !== undefined && element.passed === false) {
         failedTitle = title;

@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "rm -rf build/res/* && npm run compile-test && npm run get-test-results && npm run check-test-results",
+    "test": "rm -rf build/res/* && npm run serve & npm run compile-test && npm run get-test-results && npm run check-test-results",
+    "serve" : "node build/webserver.js",
 
     "compile": "tsc -p tsconfig.json",
     "compile-watch": "tsc -p tsconfig.json --watch",
