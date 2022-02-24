@@ -8,12 +8,12 @@ on:
 
 jobs:
   test:
+    name: Run CLI test for front-end
     runs-on: ubuntu-latest
     container: 
       image: akrck02/gtd-lib-test:v1
       options:  --privileged=true -v /__w/GTD-LIB-TS/src:/gtd-lib/src/ -v /__w/GTD-LIB-TS/test:/gtd-lib/test/
     steps:
-    - name: Run CLI test for front-end
     - uses: actions/checkout@v2
       with: 
         cmd: npm i && npm run test-ci
