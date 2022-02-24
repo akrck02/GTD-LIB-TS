@@ -17,5 +17,5 @@ jobs:
         path: "GTD-LIB-TS"
     - name: RunTest
       run: | 
-        sh scripts/docker.test.cli.sh
+        npm run test-ci
 
