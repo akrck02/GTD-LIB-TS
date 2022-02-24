@@ -11,11 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: akrck02/gtd-lib-test:v1
+      options:  --privileged=true -v "$(pwd)"/src:/gtd-lib/src/ -v "$(pwd)"/test:/gtd-lib/test/
     steps:
     - uses: actions/checkout@v2
-      with: 
-        path: "GTD-LIB-TS"
-    - name: RunTest
+    - name: Run CLI test for front-end
       run: | 
-        ls -lha GTD-LIB-TS
+        ls -lha 
 
