@@ -17,5 +17,5 @@ jobs:
     - name: Run CLI test for front-end
       run: | 
         npm i
-      cmd: npm run test-ci
+    - cmd: npm run test-ci
 
