@@ -13,3 +13,7 @@ RUN apt-get update \
 RUN ls -lha build/drivers/
 RUN cp build/drivers/geckodriver /usr/local/bin
 RUN ls -lha /usr/local/bin
+RUN chmod +x /usr/local/bin/geckodriver
+
+RUN npm i
+EXPOSE 5500
