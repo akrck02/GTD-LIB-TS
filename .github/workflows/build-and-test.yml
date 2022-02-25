@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: akrck02/gtd-lib-test:v1
-      options:  --user root --privileged=true -v /__w/GTD-LIB-TS/src:/gtd-lib/src/ -v /__w/GTD-LIB-TS/test:/gtd-lib/test/
+      options: --user root --privileged=true -v /__w/GTD-LIB-TS/src:/gtd-lib/src/ -v /__w/GTD-LIB-TS/test:/gtd-lib/test/
     steps:
     - uses: actions/checkout@v2
     - name: Run CLI test for front-end
       run: | 
-        npm i && ls -lha
+        npm i && ls -lha && whoami
         
 # npm run test-ci
 
