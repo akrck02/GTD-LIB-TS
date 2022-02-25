@@ -7,12 +7,12 @@ RUN echo "NODE Version:" && node --version
 RUN echo "NPM Version:" && npm --version
 
 COPY . .
-RUN apt-get update \
-    && apt-get install -y wget gnupg fonts-ipafont-gothic fonts-freefont-ttf firefox-esr --no-install-recommends
+RUN apt-get update 
+RUN apt-get install -y wget gnupg fonts-ipafont-gothic fonts-freefont-ttf firefox-esr --no-install-recommends
 
-RUN ls -lha build/drivers/
+RUN apt-get install sudo
+
 RUN cp build/drivers/geckodriver /usr/local/bin
-RUN ls -lha /usr/local/bin
 RUN chmod +x /usr/local/bin/geckodriver
 
 RUN npm i
