@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run CLI test for front-end
       run: | 
-        sudo chmod -R 777 /gtd-lib/ && npm i && npm run test-ci
+        chmod -R 777 /gtd-lib/ && npm i && npm run test-ci
 
