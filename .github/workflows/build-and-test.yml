@@ -2,14 +2,19 @@ name: build and test
 
 on:
   push:
-    branches: [ main , latest ]
+    branches: [ dev , latest ]
   pull_request:
-    branches: [ main , latest ]
+    branches: [ dev , latest ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    container: 
+      image: akrck02/gtd-lib-test:v1
+      options: --user root --privileged=true -v /__w/GTD-LIB-TS/src:/gtd-lib/src/ -v /__w/GTD-LIB-TS/test:/gtd-lib/test/
     steps:
     - uses: actions/checkout@v2
-    - run: sh scripts/docker.test.cli.sh
+    - name: Run CLI test for front-end
+      run: | 
+        sudo chmod 777 . -R && cat /etc/hosts && sudo npm i && sudo npm run test-ci 
 
