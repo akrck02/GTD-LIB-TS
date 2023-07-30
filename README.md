@@ -5,6 +5,18 @@ Easy code :)
 > *Getting things done is our philosophy. Allowing developers to keep code clean and mantainable.*
 
 
+# ⚠️ Warning, this project is currently moved!!⚠️
+
+```
+We moved all the functionalities of GTD library to GTD Framework,
+I you really want to use this libraries for your projects ypu can:
+
+- Download the latest version of GTD Framework and get the library.
+- Download the latest version of GTD Framework and use it for your project.
+```
+
+
+
 
 ## Supported languages
 
