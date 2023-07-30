@@ -1,4 +1,4 @@
-# GTD API - Getting things done.
+# GTD Library - Getting things done.
 Easy code :)
 
 > This is a typescript library with code snipets that let you develop software faster. 
